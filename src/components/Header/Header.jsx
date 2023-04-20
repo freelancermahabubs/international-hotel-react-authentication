@@ -2,6 +2,8 @@ import React from "react";
 import banner from "../../../src/assets/intercontinental-hotel.jpg";
 import Navbar from "../Navbar/Navbar";
 import Marquee from "react-fast-marquee";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProviders/AuthProviders";
 const Header = () => {
   return (
     <div
@@ -19,7 +21,7 @@ const Header = () => {
           InterNational Hotel
         </p>
         <Marquee speed={100}>
-          <p className="text-center font-semibold text-3xl pt-14 bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient ">
+          <p className="text-center font-semibold text-2xl bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient ">
             A Global Icon of Arabian Luxury
           </p>
         </Marquee>

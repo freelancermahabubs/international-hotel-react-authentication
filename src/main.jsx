@@ -8,6 +8,9 @@ import Login from "./components/Login/Login";
 import SingUp from "./components/SingUp/SingUp";
 import Book from "./components/Book/Book";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import AuthProviders from "./components/AuthProviders/AuthProviders";
+import PrivateRoutes from "./components/PrivateRoutes/PrivateRoutes";
+import SpecialServices from "./components/SpecialServices/SpecialServices";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,12 +31,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/book",
-        element: <Book />,
+        element: (
+          <PrivateRoutes>
+            <Book />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/specialservice",
+        element: (
+          <PrivateRoutes>
+            <SpecialServices />
+          </PrivateRoutes>
+        ),
       },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AuthProviders>
+    <RouterProvider router={router} />
+  </AuthProviders>
 );
