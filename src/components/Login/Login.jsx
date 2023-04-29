@@ -69,6 +69,7 @@ const Login = () => {
       );
       return;
     }
+
     forgetPassword(email)
       .then(() => {
         setSuccess(
